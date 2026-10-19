@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ilyaas Ibrahim Yusuf</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Main">
+        <a class="brand" href="#" data-view="home">Ilyaas</a>
+        <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navLinks">
+          Menu
+        </button>
+        <div class="links" id="navLinks">
+          <a href="#" data-view="home">Home</a>
+          <a href="#" data-view="about">About</a>
+          <a href="#" data-view="service">Service</a>
+          <a href="#" data-view="contact">Contact</a>
+          <a href="#" data-view="help">Help Center</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container" tabindex="-1">
+      <!-- Home view -->
+      <section class="view active" id="view-home">
+        <div class="grid">
+          <section class="card col-12 hero">
+            <span class="badge">Front-end • UI-focused</span>
+            <h1>Modern websites that feel clean and easy to use.</h1>
+            <p>
+              Hi, I’m Ilyaas. I build responsive websites using HTML, CSS, and JavaScript.
+              I like simple layouts, readable code, and good UX.
+            </p>
+            <div class="actions">
+              <button class="btn primary" data-view-link="service">View Services</button>
+              <button class="btn" data-view-link="contact">Contact Me</button>
+            </div>
+          </section>
+
+          <section class="card col-6">
+            <h2>What I do</h2>
+            <p>Landing pages, portfolios, and small business sites with a modern look.</p>
+            <p>Mobile-first layout, basic SEO, clean components, and fast loading.</p>
+          </section>
+
+          <section class="card col-6">
+            <h2>How I work</h2>
+            <p>Simple plan → quick design → build → test on phone → final polish.</p>
+            <p>I keep things lightweight (no heavy libraries unless needed).</p>
+          </section>
+        </div>
+      </section>
+
+      <!-- About view -->
+      <section class="view" id="view-about">
+        <section class="card">
+          <h2>About</h2>
+          <div class="grid" style="align-items:center">
+            <div class="col-5">
+              <div class="avatar" aria-label="Profile image">
+                <div class="avatar-inner">IY</div>
+              </div>
+            </div>
+            <div class="col-7">
+              <p class="badge">Full name</p>
+              <h1 class="title-lg">Ilyaas Ibrahim Yusuf</h1>
+              <p>
+                I’m a front-end developer who enjoys building modern, responsive pages.
+                I like clean UI, clear spacing, and simple JavaScript.
+              </p>
+              <h3 class="sub-heading">Skills</h3>
+              <div class="skill-list" aria-label="Skills">
+                <span class="skill">HTML</span>
+                <span class="skill">CSS</span>
+                <span class="skill">JavaScript</span>
+                <span class="skill">UI Design</span>
+                <span class="skill">Responsive Design</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- Service view / Calendar -->
+      <section class="view" id="view-service">
+        <section class="card">
+          <h2>Service – Simple Project Calendar</h2>
+          <p class="hint">
+            I use a small calendar like this to plan tasks. You can click a day, add a short event,
+            and it will be saved in your browser using localStorage.
+          </p>
+          <div class="calendar">
+            <div class="cal-header">
+              <button type="button" id="calPrev">&lt;</button>
+              <div>
+                <div class="cal-month" id="calMonth"></div>
+                <div class="cal-year" id="calYear"></div>
+              </div>
+              <button type="button" id="calNext">&gt;</button>
+            </div>
+            <div class="cal-weekdays">
+              <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+            </div>
+            <div class="cal-grid" id="calGrid"></div>
+
+            <div class="cal-side">
+              <h3 class="sub-heading">Event for <span id="eventDateLabel"></span></h3>
+              <textarea id="eventText" placeholder="Add a short note or event..."></textarea>
+              <div class="cal-actions">
+                <button type="button" class="btn primary" id="saveEvent">Save event</button>
+                <button type="button" class="btn" id="deleteEvent">Delete event</button>
+              </div>
+              <p class="hint" id="eventStatus"></p>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- Contact view -->
+      <section class="view" id="view-contact">
+        <div class="grid">
+          <section class="card col-6">
+            <h2>Contact</h2>
+            <p><strong>Gmail:</strong> <a href="mailto:ilyaasyaxye11@gmail.com">ilyaasyaxye11@gmail.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+252770767090">+252 770 767 090</a></p>
+            <p class="hint">This form is frontend-only. It checks your input and shows a success message.</p>
+          </section>
+
+          <section class="card col-6">
+            <h2>Message me</h2>
+            <form id="contactForm" novalidate>
+              <div class="row">
+                <div>
+                  <label for="cName">Name</label>
+                  <input id="cName" name="name" type="text" autocomplete="name" placeholder="Your name" />
+                  <div class="error" data-err="name"></div>
+                </div>
+                <div>
+                  <label for="cEmail">Email</label>
+                  <input id="cEmail" name="email" type="email" autocomplete="email" placeholder="you@example.com" />
+                  <div class="error" data-err="email"></div>
+                </div>
+              </div>
+              <div>
+                <label for="cMsg">Message</label>
+                <textarea id="cMsg" name="message" placeholder="Write your message..."></textarea>
+                <div class="error" data-err="message"></div>
+              </div>
+              <button class="btn primary" type="submit">Send</button>
+              <div class="success" id="contactSuccess" aria-live="polite"></div>
+            </form>
+          </section>
+        </div>
+      </section>
+
+      <!-- Help Center view -->
+      <section class="view" id="view-help">
+        <section class="card">
+          <h2>Help Center</h2>
+          <p>Send a complaint/ticket using only WhatsApp or Gmail.</p>
+          <form id="helpForm" novalidate>
+            <div class="row">
+              <div>
+                <label for="hName">Your name</label>
+                <input id="hName" name="name" placeholder="Your name" />
+                <div class="error" data-err="hname"></div>
+              </div>
+              <div>
+                <label>Send using</label>
+                <div class="radio-row">
+                  <label><input type="radio" name="send" value="wa" checked /> WhatsApp</label>
+                  <label><input type="radio" name="send" value="mail" /> Gmail</label>
+                </div>
+                <div class="error" data-err="send"></div>
+              </div>
+            </div>
+            <div>
+              <label for="hMsg">Complaint / message</label>
+              <textarea id="hMsg" name="message" placeholder="Describe your issue..."></textarea>
+              <div class="error" data-err="hmsg"></div>
+            </div>
+            <button class="btn primary" type="submit">Send Ticket</button>
+            <p class="hint">This will open WhatsApp or your email app using a simple link.</p>
+          </form>
+        </section>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <small>© <span id="year"></span> Ilyaas Ibrahim Yusuf</small>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
